@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chip Example with Close Icon</title>
+    <style>
+        /* Basic styling for the chip */
+        .chip {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: #e0e0e0;
+            color: #333;
+            font-size: 14px;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        /* Additional styling for a different chip variant (badge-info) */
+        .badge-info {
+            background-color: #2196F3;
+            color: #fff;
+        }
+
+        /* Close icon styling */
+        .close-icon {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Example of a basic chip with a close icon -->
+<div class="chip">
+    Default Chip
+    <span class="close-icon" onclick="removeChip(this)">x</span>
+</div>
+
+<!-- Example of a chip with a different variant (badge-info) and a close icon -->
+<div class="chip badge-info">
+    Info Chip
+    <span class="close-icon" onclick="removeChip(this)">x</span>
+</div>
+
+<script>
+    // JavaScript function to remove the chip when the close icon is clicked
+    function removeChip(closeIcon) {
+        var chip = closeIcon.parentNode;
+        chip.parentNode.removeChild(chip);
+    }
+</script>
+
+</body>
+</html>
